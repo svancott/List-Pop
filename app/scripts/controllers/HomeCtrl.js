@@ -1,9 +1,16 @@
 (function() {
-    function HomeCtrl() {
-      this.test = "this is a test";
+    function HomeCtrl(Task) {
+        this.tasks = Task.all;
+        this.newTask = {};
+
+    		this.createTask = function() {
+    			// Pass this to Firebase
+    			Task.create(this.newTask.name);
+          this.newTask.name = "";
+    		}
     }
 
     angular
         .module('listPop')
-        .controller('HomeCtrl', [HomeCtrl]);
+        .controller('HomeCtrl', ['Task', HomeCtrl]);
 })();

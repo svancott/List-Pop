@@ -1,2 +1,9 @@
-<h1 ng-controller="HomeCtrl">test</h1>
-{{ home.test }}
+<div>
+  <h1>To-do's</h1>
+  <h3>Enter a new task:</h3>
+  <input type="text" ng-model="home.newTask.name">
+  <button ng-click="home.createTask()">Create</button>
+  <ul ng-repeat="task in home.tasks">
+    <li>{{ task.name }} ( {{task.dateCreated | date : "shortDate"}} )</li>
+  </ul>
+</div>
