@@ -2,14 +2,19 @@
   <h1>To-do's</h1>
   <h5>Enter task name:</h5>
   <input  type="text" ng-model="home.newTask.name">
-  <h5>Priority: <input type="number" min=1 max=5 ng-model="home.newTask.priority"></h5>
-
+  <h5>Priority:
+    <select ng-model="home.newTask.priority">
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">low</option>
+    </select>
+  </h5>
   <button ng-click="home.createTask()">Create</button>
   <ul ng-repeat="task in home.tasks">
     <li ng-hide="home.show(task)">
       <h3>{{ task.name }}</h3>
       <!-- <input type="checkbox" name="completed"></input> -->
-      <h4><pre>Priority: {{ task.priority }}      Status: {{ task.status }}</pre></h4>
+      <h4>Priority: {{ task.priority }}</h4>
       <form>
         <h5><em>Completed?</em><input type="checkbox" name="checkbox" value="checked">
       </form><hr>
