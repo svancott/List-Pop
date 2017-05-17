@@ -1,6 +1,11 @@
 (function() {
     function HomeCtrl(Task) {
         this.tasks = Task.all;
+
+        // var ref = firebase.database().ref().child("tasks");
+        // var syncObject = $firebaseObject(ref);
+        // syncObject.$bindTo("tasks");
+
         this.newTask = {};
 
     		this.createTask = function() {

@@ -1,0 +1,15 @@
+<a ui-sref="home">Home</a>
+
+<h1>Completed Tasks:</h1>
+<div ng-repeat="task in history.tasks">
+  <ul>
+    <li ng-show="history.completed(task)">{{ task.name }}</li>
+  </ul>
+</div>
+
+<h1>Expired Tasks:</h1>
+<div ng-repeat="task in history.tasks">
+  <ul>
+    <li ng-show="history.expired(task)">{{ task.name }}</li>
+  </ul>
+</div>

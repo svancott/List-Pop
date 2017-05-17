@@ -11,6 +11,12 @@
                  url: '/',
                  controller: 'HomeCtrl as home',
                  templateUrl: '/templates/home.html'
+             })
+         $stateProvider
+             .state('history', {
+                 url: '/history',
+                 controller: 'HistoryCtrl as history',
+                 templateUrl: '/templates/history.html'
              });
      }
 
