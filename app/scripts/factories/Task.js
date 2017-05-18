@@ -1,6 +1,8 @@
 (function() {
-	function Task($firebaseArray) {
+	function Task($firebaseArray, $firebaseObject) {
+
 		var ref = firebase.database().ref().child("tasks");
+
 		var tasks = $firebaseArray(ref);
 
 		var createTask = function(taskName, taskPriority) {
@@ -10,7 +12,7 @@
         status: "active",
 				dateCreated: firebase.database.ServerValue.TIMESTAMP
 			});
-		};
+		}
 
 		return {
 			all: tasks,
@@ -20,5 +22,5 @@
 
 	angular
 		.module('listPop')
-		.factory('Task', ['$firebaseArray', Task]);
+		.factory('Task', ['$firebaseArray', '$firebaseObject', Task]);
 })();

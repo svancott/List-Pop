@@ -1,28 +1,28 @@
-<div>
+<div class="container-fluid">
   <h1>To-do's</h1>
   <h5>Enter task name:</h5>
   <input  type="text" ng-model="home.newTask.name">
   <h5>Priority:
     <select ng-model="home.newTask.priority">
-      <option value="high">High</option>
+      <option value="high" selected>High</option>
       <option value="medium">Medium</option>
       <option value="low">low</option>
     </select>
   </h5>
-  <button ng-click="home.createTask()">Create</button>
+  <button class="btn btn-success" ng-click="home.createTask()">Create</button>
   <ul ng-repeat="task in home.tasks">
-    <li ng-hide="home.show(task)">
+    <li ng-hide="home.expiredOrCompleted(task)">
       <h3>{{ task.name }}</h3>
       <!-- <input type="checkbox" name="completed"></input> -->
       <h4>Priority: {{ task.priority }}</h4>
       <form>
-        <h5><em>Completed?</em><input type="checkbox" name="checkbox" value="checked">
+        <h5><em>Completed? </em><input type="checkbox" name="checkbox" value="checked">
+        <button ng-click="home.markAsCompleted(task.$id, task.name, task.priority, task.dateCreated)">Update</button>
       </form><hr>
     </li>
   </ul>
-  <button type="submit">Update</button>
+  <a ui-sref="history">Previous To-do's</a>
 </div>
 
-<a ui-sref="history">Previous To-do's</a>
-<!-- {{ home.tasks }} -->
+<!-- {{ home.tasks | json }} -->
 <!-- milliseconds in a week 604800000 -->
