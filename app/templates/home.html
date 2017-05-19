@@ -1,27 +1,26 @@
-<div class="container-fluid">
-  <h1>To-do's</h1>
-  <h5>Enter task name:</h5>
-  <input  type="text" ng-model="home.newTask.name">
-  <h5>Priority:
-    <select ng-model="home.newTask.priority">
-      <option value="high" selected>High</option>
-      <option value="medium">Medium</option>
-      <option value="low">low</option>
-    </select>
-  </h5>
-  <button class="btn btn-success" ng-click="home.createTask()">Create</button>
+<div class="page" >
+    <h5  class="new-task">Enter task name: <input class="input" type="text" ng-model="home.newTask.name" autofocus></h5>
+
+    <h5 class="new-task">Priority:
+      <select class="input" ng-model="home.newTask.priority">
+        <option value="high" selected>High</option>
+        <option value="medium">Medium</option>
+        <option value="low">low</option>
+      </select>
+    </h5>
+
+    <button class="btn btn-success create-button" ng-click="home.createTask()">Create</button>
+
   <ul ng-repeat="task in home.tasks">
-    <li ng-hide="home.expiredOrCompleted(task)">
-      <h3>{{ task.name }}</h3>
-      <!-- <input type="checkbox" name="completed"></input> -->
-      <h4>Priority: {{ task.priority }}</h4>
-      <form>
-        <h5><em>Completed? </em><input type="checkbox" name="checkbox" value="checked">
-        <button ng-click="home.markAsCompleted(task.$id, task.name, task.priority, task.dateCreated)">Update</button>
-      </form><hr>
+    <li class="task-list" ng-hide="home.expiredOrCompleted(task)">
+      <h3 class="task-name"><img src="styles/yellow-balloon.svg" width="50px" height="50px">{{ task.name }}</h3>
+      <div class="pri-comp">
+        <h5 ng-show="home.hasPriority(task)">priority: {{ task.priority }}</h5>
+        <h5><em>Completed? </em>
+        <button class="btn btn-danger btn-sm" ng-click="home.markAsCompleted(task.$id, task.name, task.priority, task.dateCreated)">Pop it!</button>
+      </div><hr>
     </li>
   </ul>
-  <a ui-sref="history">Previous To-do's</a>
 </div>
 
 <!-- {{ home.tasks | json }} -->

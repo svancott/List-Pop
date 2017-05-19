@@ -1,0 +1,112 @@
+body {
+  background: lightgreen;
+  background: -webkit-linear-gradient(bottom right, lightgreen, white);
+  background: -o-linear-gradient(bottom right, lightgreen, white);
+  background: -moz-linear-gradient(bottom right, lightgreen, white);
+  background-color: linear-gradient(to bottom right, white, lightgreen);
+  background-size: cover;
+}
+
+nav {
+  background-color: lightblue;
+  padding: 13px;
+  font-size: 20px;
+  text-transform: ;
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 1px;
+}
+
+nav .previous {
+  padding-left: 15px;
+}
+
+nav .about {
+  text-align: right;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+hr {
+  border-color: gray;
+  opacity: .3;
+}
+
+.page {
+  padding-left: 15px;
+  max-width: 600px;
+  display: block;
+  margin: auto;
+
+}
+
+.new-task {
+  float:left;
+  padding-right: 15px;
+}
+
+.title, .title:link {
+  font-family: 'Abril Fatface', cursive;
+  text-decoration: none;
+  font-size: 4em;
+  text-align: center;
+  position: relative;
+  display: block;
+}
+
+.title-balloon-right {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.previous-tasks {
+  display: block;
+  margin: auto;
+  max-width: 600px;
+}
+
+.completed-tasks {
+  display: block;
+  float: left;
+  padding-left: 30px;
+  width: 50%;
+  margin:auto;
+}
+.expired-tasks {
+  display: block;
+  float: left;
+  padding-left: 30px;
+  width: 50%;
+  margin:auto;
+}
+
+.input {
+  border-radius: 5px;
+  border-color: lightblue;
+}
+
+.create-button {
+  margin-top: 5px;
+}
+
+.lef {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.task-list {
+  list-style-type: none;
+}
+
+.task-name {
+  color: green;
+}
+
+.pri-comp {
+  padding-left: 70px;
+}

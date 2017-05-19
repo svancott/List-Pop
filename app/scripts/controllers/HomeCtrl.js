@@ -1,7 +1,7 @@
 (function() {
     function HomeCtrl($firebaseObject, $scope, Task, $firebaseArray ) {
         this.tasks = Task.all;
-        
+
         var ref = firebase.database().ref().child("tasks");
         var syncObject = $firebaseObject(ref);
         syncObject.$bindTo($scope, "tasks");
@@ -26,6 +26,10 @@
           currentTask.priority = priority;
           currentTask.dateCompleted = firebase.database.ServerValue.TIMESTAMP;
           currentTask.$save();
+        }
+
+        this.hasPriority = function(task) {
+          return (task.priority != "");
         }
     }
 

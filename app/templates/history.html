@@ -1,17 +1,21 @@
-<div class="container-fluid">
-  <a ui-sref="home">Home</a>
+<div class="previous-tasks">
 
-  <h1>Completed Tasks:</h1>
-  <div ng-repeat="task in history.tasks">
-    <ul>
-      <li ng-show="history.completed(task)">{{ task.name }}</li>
-    </ul>
+  <div class="completed-tasks">
+    <h3 class="task-name">Completed Tasks:</h3>
+    <div ng-repeat="task in history.tasks">
+      <ul>
+        <li ng-show="history.completed(task)"><del>{{ task.name }}</del><button class="btn btn-primary btn-xs lef" ng-click="history.restore(task.$id, task.name, task.priority)">restore</button><button class="btn btn-danger btn-xs" ng-click="history.del(task)">delete</button></li>
+      </ul>
+    </div>
   </div>
 
-  <h1>Expired Tasks:</h1>
-  <div ng-repeat="task in history.tasks">
-    <ul>
-      <li ng-show="history.expired(task)">{{ task.name }}</li>
-    </ul>
+  <div class="expired-tasks">
+    <h3 class="task-name">Expired Tasks:</h3>
+    <div ng-repeat="task in history.tasks">
+      <ul>
+        <li ng-show="history.expired(task)">{{ task.name }}<button class="btn btn-primary btn-xs lef" ng-click="history.restore(task.$id, task.name, task.priority)">restore</button><button class="btn btn-danger btn-xs" ng-click="history.del(task)">delete</button></li>
+      </ul>
+    </div>
   </div>
+
 </div>

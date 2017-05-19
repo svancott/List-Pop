@@ -3,11 +3,19 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>List Pop</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>ListPop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 </head>
 <body>
+  <nav>
+    <a ui-sref="home">home</a>
+    <a ui-sref="history" class="previous">past items</a>
+    <a ui-sref="about" class="pull-right">about</a>
+  </nav>
+    <a class="title" ui-sref="home"><img src="styles/red-balloon.png" width="70" height="70" alt="balloon">ListPop<img class="title-balloon-right" src="styles/red-balloon.png" width="70" height="70" alt="balloon"></a>
     <ui-view></ui-view>
 
     <!-- Angular -->
